@@ -6,7 +6,7 @@ Handles text extraction and preprocessing.
 import logging
 from pathlib import Path
 from typing import Optional, List
-import PyPDF2
+from pypdf import PdfReader
 import pdfplumber
 from docx import Document
 
@@ -72,10 +72,10 @@ class DocumentProcessor:
         return "\n\n".join(text)
 
     def _extract_with_pypdf2(self, file_path: str) -> str:
-        """Extract text using PyPDF2."""
+        """Extract text using pypdf."""
         text = []
         with open(file_path, "rb") as file:
-            pdf_reader = PyPDF2.PdfReader(file)
+            pdf_reader = PdfReader(file)
             for page in pdf_reader.pages:
                 page_text = page.extract_text()
                 if page_text:

@@ -59,7 +59,7 @@ class ModelLoader:
 
         return self.t5_model, self.t5_tokenizer
 
-    def load_llama_model(self, model_name: str = "meta-llama/Llama-2-7b-chat-hf") -> tuple:
+    def load_llama_model(self, model_name: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0") -> tuple:
         """
         Load Llama model for Q&A.
         Note: For production, use a legal-specific fine-tuned version.
