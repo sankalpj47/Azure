@@ -133,6 +133,7 @@ function GridTrailEffect({ rows = 20, cols = 35, radius = 2 }) {
 export default function Home() {
   const [summaryLength, setSummaryLength] = useState(50);
 
+  // Button Handlers
   const handleWebsiteClick = () => alert("Website URL clicked!");
   const handleUploadClick = () => alert("Upload File clicked!");
   const handleSummarizeClick = () => alert("Summarize clicked!");
@@ -141,6 +142,7 @@ export default function Home() {
 
   return (
     <>
+      <div>
       {/* FIXED GRID BACKGROUND */}
       <GridTrailEffect rows={20} cols={35} radius={2} />
 
@@ -326,6 +328,7 @@ export default function Home() {
           </div>
         </section>
       </div>
-    </>
+    </div>
+  </>
   );
 }
